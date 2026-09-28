@@ -1,0 +1,27 @@
+{
+  "scenarios": [
+    {
+      "label": "필터 없음",
+      "matches": 300,
+      "execution_time_ms": 1.2,
+      "node_type": "Limit",
+      "index_used": null
+    },
+    {
+      "label": "낮은 선택도(다건 매치)",
+      "matches": 39,
+      "execution_time_ms": 0.155,
+      "node_type": "Limit",
+      "index_used": null
+    },
+    {
+      "label": "높은 선택도(소수 매치)",
+      "matches": 8,
+      "execution_time_ms": 0.055,
+      "node_type": "Limit",
+      "index_used": "idx_documents_structured"
+    }
+  ],
+  "backfill_mismatch": 0,
+  "index_count": 4
+}

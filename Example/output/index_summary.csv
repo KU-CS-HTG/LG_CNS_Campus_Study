@@ -1,0 +1,7 @@
+indexname,indexdef
+documents_company_idx,CREATE INDEX documents_company_idx ON public.documents USING btree (company)
+documents_pkey,CREATE UNIQUE INDEX documents_pkey ON public.documents USING btree (id)
+idx_documents_embedding_hnsw,"CREATE INDEX idx_documents_embedding_hnsw ON public.documents USING hnsw (embedding vector_cosine_ops) WITH (m='16', ef_construction='64')"
+idx_documents_metadata_gin,CREATE INDEX idx_documents_metadata_gin ON public.documents USING gin (metadata jsonb_path_ops)
+idx_documents_structured,"CREATE INDEX idx_documents_structured ON public.documents USING btree (doc_type, financial_year)"
+idx_documents_tsv_gin,CREATE INDEX idx_documents_tsv_gin ON public.documents USING gin (content_tsv)
